@@ -1,0 +1,6 @@
+{   
+    "databaseConfig":{
+        "host": "mi-mongo",
+        "database": "alura-cars"
+    }
+}
