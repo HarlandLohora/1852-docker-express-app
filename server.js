@@ -12,16 +12,11 @@ if (!env) {
 const config = require(`./config/config.${env}.json`);
 
 require("./config/database")(
-  `mongodb://localhost:27017/${config.databaseConfig.database}`
+  `mongodb://${config.databaseConfig.host}:27017/${config.databaseConfig.database}`
 );
 
-// console.log(
-//   `mongodb://${config.databaseConfig.host}:27017/${config.databaseConfig.database}`
-// );
-//
-
 MongoClient.connect(
-  `mongodb://localhost:27017/${config.databaseConfig.database}`,
+  `mongodb://${config.databaseConfig.host}:27017/${config.databaseConfig.database}`,
   function (err, db) {
     if (err) throw err;
     console.log("Database created!");
